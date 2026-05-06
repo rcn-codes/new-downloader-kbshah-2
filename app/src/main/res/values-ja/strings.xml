@@ -1,0 +1,40 @@
+<resources>
+    <string name="app_name">newdownloader26</string>
+
+    <string name="common_ok">OK</string>
+    <string name="common_continue">続行</string>
+    <string name="common_back">戻る</string>
+    <string name="common_menu">メニュー</string>
+    <string name="common_premium">プレミアム</string>
+    <string name="common_link">リンク</string>
+
+    <string name="downloader_title">動画ダウンローダー</string>
+    <string name="downloader_subtitle">あらゆるSNSから高品質なメディアをダウンロード。</string>
+    <string name="downloader_paste_placeholder">リンクを貼り付ける／自動検出</string>
+    <string name="downloader_clipboard_empty">クリップボードは空です</string>
+    <string name="downloader_paste">貼り付け</string>
+    <string name="downloader_download_video">動画をダウンロード</string>
+    <string name="downloader_direct_links">ダイレクトリンク</string>
+    <string name="downloader_pro_tip">PRO TIP</string>
+    <string name="downloader_auto_detect_links">リンク自動検出</string>
+    <string name="downloader_enable_clipboard_monitoring">クリップボード監視を有効にして即時ダウンロード。</string>
+    <string name="downloader_enable_now">今すぐ有効化 \u203a</string>
+    <string name="downloader_clipboard_auto_detect_desc">クリップボード自動検出</string>
+
+    <string name="downloads_title">ダウンロード</string>
+    <string name="downloads_empty">ダウンロードはまだありません</string>
+    <string name="downloads_available_storage">空き容量</string>
+    <string name="downloads_storage_used_format">%2$s GB 中 %1$s GB 使用</string>
+
+    <string name="download_complete_title">ダウンロード完了</string>
+    <string name="download_complete_subtitle">動画のダウンロードが完了しました。</string>
+    <string name="download_complete_view_downloads">ダウンロードを見る</string>
+
+    <string name="language_title">言語を選択</string>
+    <string name="language_subtitle">言語を選択してください。後で変更できます。</string>
+    <string name="language_confirm">言語を確定</string>
+
+    <string name="splash_title">動画ダウンローダー</string>
+    <string name="splash_subtitle">最高の動画と音楽を\n簡単・高速・無料</string>
+</resources>
+

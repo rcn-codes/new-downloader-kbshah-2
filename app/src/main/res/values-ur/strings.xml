@@ -1,0 +1,40 @@
+<resources>
+    <string name="app_name">newdownloader26</string>
+
+    <string name="common_ok">ٹھیک ہے</string>
+    <string name="common_continue">جاری رکھیں</string>
+    <string name="common_back">واپس</string>
+    <string name="common_menu">مینو</string>
+    <string name="common_premium">پریمیم</string>
+    <string name="common_link">لنک</string>
+
+    <string name="downloader_title">ویڈیوز ڈاؤنلوڈر</string>
+    <string name="downloader_subtitle">کسی بھی سوشل پلیٹ فارم سے اعلیٰ معیار کی میڈیا ڈاؤنلوڈ کریں۔</string>
+    <string name="downloader_paste_placeholder">یہاں لنک پیسٹ کریں یا خودکار شناخت</string>
+    <string name="downloader_clipboard_empty">کلپ بورڈ خالی ہے</string>
+    <string name="downloader_paste">پیسٹ</string>
+    <string name="downloader_download_video">ویڈیو ڈاؤنلوڈ کریں</string>
+    <string name="downloader_direct_links">ڈائریکٹ لنکس</string>
+    <string name="downloader_pro_tip">پرو ٹِپ</string>
+    <string name="downloader_auto_detect_links">لنکس خودکار شناخت</string>
+    <string name="downloader_enable_clipboard_monitoring">فوری ڈاؤنلوڈ کے لیے کلپ بورڈ مانیٹرنگ فعال کریں۔</string>
+    <string name="downloader_enable_now">ابھی فعال کریں \u203a</string>
+    <string name="downloader_clipboard_auto_detect_desc">کلپ بورڈ خودکار شناخت</string>
+
+    <string name="downloads_title">ڈاؤنلوڈز</string>
+    <string name="downloads_empty">ابھی تک کوئی ڈاؤنلوڈ نہیں</string>
+    <string name="downloads_available_storage">دستیاب اسٹوریج</string>
+    <string name="downloads_storage_used_format">%2$s GB میں سے %1$s GB استعمال</string>
+
+    <string name="download_complete_title">ڈاؤنلوڈ مکمل</string>
+    <string name="download_complete_subtitle">آپ کی ویڈیو کامیابی سے ڈاؤنلوڈ ہوگئی۔</string>
+    <string name="download_complete_view_downloads">ڈاؤنلوڈز دیکھیں</string>
+
+    <string name="language_title">زبان منتخب کریں</string>
+    <string name="language_subtitle">ابھی زبان منتخب کریں، بعد میں تبدیل کر سکتے ہیں۔</string>
+    <string name="language_confirm">زبان کی تصدیق</string>
+
+    <string name="splash_title">ویڈیوز ڈاؤنلوڈر</string>
+    <string name="splash_subtitle">بہترین ویڈیو اور میوزک حاصل کریں\nآسان، تیز اور مفت</string>
+</resources>
+

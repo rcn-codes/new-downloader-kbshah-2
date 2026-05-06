@@ -1,0 +1,40 @@
+<resources>
+    <string name="app_name">newdownloader26</string>
+
+    <string name="common_ok">OK</string>
+    <string name="common_continue">Weiter</string>
+    <string name="common_back">Zurück</string>
+    <string name="common_menu">Menü</string>
+    <string name="common_premium">Premium</string>
+    <string name="common_link">Link</string>
+
+    <string name="downloader_title">Video-Downloader</string>
+    <string name="downloader_subtitle">Lade hochwertige Medien von jeder Social-Plattform herunter.</string>
+    <string name="downloader_paste_placeholder">Link hier einfügen oder automatisch erkennen</string>
+    <string name="downloader_clipboard_empty">Zwischenablage ist leer</string>
+    <string name="downloader_paste">Einfügen</string>
+    <string name="downloader_download_video">Video herunterladen</string>
+    <string name="downloader_direct_links">Direktlinks</string>
+    <string name="downloader_pro_tip">PRO-TIPP</string>
+    <string name="downloader_auto_detect_links">Links automatisch erkennen</string>
+    <string name="downloader_enable_clipboard_monitoring">Zwischenablage-Überwachung für Sofort-Downloads aktivieren.</string>
+    <string name="downloader_enable_now">Jetzt aktivieren \u203a</string>
+    <string name="downloader_clipboard_auto_detect_desc">Zwischenablage Auto-Erkennung</string>
+
+    <string name="downloads_title">Downloads</string>
+    <string name="downloads_empty">Noch keine Downloads</string>
+    <string name="downloads_available_storage">Verfügbarer Speicher</string>
+    <string name="downloads_storage_used_format">%1$s GB von %2$s GB verwendet</string>
+
+    <string name="download_complete_title">Download abgeschlossen</string>
+    <string name="download_complete_subtitle">Dein Video wurde erfolgreich heruntergeladen.</string>
+    <string name="download_complete_view_downloads">Downloads ansehen</string>
+
+    <string name="language_title">Sprache auswählen</string>
+    <string name="language_subtitle">Wähle jetzt deine Sprache und ändere sie später.</string>
+    <string name="language_confirm">Sprache bestätigen</string>
+
+    <string name="splash_title">Video-Downloader</string>
+    <string name="splash_subtitle">Beste Videos &amp; Musik erhalten\nEinfach, schnell und kostenlos</string>
+</resources>
+

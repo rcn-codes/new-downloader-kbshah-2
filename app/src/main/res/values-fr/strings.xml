@@ -1,0 +1,40 @@
+<resources>
+    <string name="app_name">newdownloader26</string>
+
+    <string name="common_ok">OK</string>
+    <string name="common_continue">Continuer</string>
+    <string name="common_back">Retour</string>
+    <string name="common_menu">Menu</string>
+    <string name="common_premium">Premium</string>
+    <string name="common_link">Lien</string>
+
+    <string name="downloader_title">Téléchargeur de vidéos</string>
+    <string name="downloader_subtitle">Téléchargez des médias de haute qualité depuis n’importe quelle plateforme sociale.</string>
+    <string name="downloader_paste_placeholder">Collez votre lien ici ou détection auto</string>
+    <string name="downloader_clipboard_empty">Le presse-papiers est vide</string>
+    <string name="downloader_paste">Coller</string>
+    <string name="downloader_download_video">Télécharger la vidéo</string>
+    <string name="downloader_direct_links">Liens directs</string>
+    <string name="downloader_pro_tip">ASTUCE PRO</string>
+    <string name="downloader_auto_detect_links">Détection automatique</string>
+    <string name="downloader_enable_clipboard_monitoring">Activez la surveillance du presse-papiers pour des téléchargements instantanés.</string>
+    <string name="downloader_enable_now">Activer \u203a</string>
+    <string name="downloader_clipboard_auto_detect_desc">Détection du presse-papiers</string>
+
+    <string name="downloads_title">Téléchargements</string>
+    <string name="downloads_empty">Aucun téléchargement</string>
+    <string name="downloads_available_storage">Stockage disponible</string>
+    <string name="downloads_storage_used_format">%1$s Go utilisés sur %2$s Go</string>
+
+    <string name="download_complete_title">Téléchargement terminé</string>
+    <string name="download_complete_subtitle">Votre vidéo a été téléchargée avec succès.</string>
+    <string name="download_complete_view_downloads">Voir les téléchargements</string>
+
+    <string name="language_title">Choisir la langue</string>
+    <string name="language_subtitle">Choisissez votre langue maintenant, modifiez-la plus tard.</string>
+    <string name="language_confirm">Confirmer la langue</string>
+
+    <string name="splash_title">Téléchargeur de vidéos</string>
+    <string name="splash_subtitle">Obtenez la meilleure vidéo et musique\nFacile, rapide et gratuit</string>
+</resources>
+

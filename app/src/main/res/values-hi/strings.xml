@@ -1,0 +1,40 @@
+<resources>
+    <string name="app_name">newdownloader26</string>
+
+    <string name="common_ok">ठीक है</string>
+    <string name="common_continue">जारी रखें</string>
+    <string name="common_back">वापस</string>
+    <string name="common_menu">मेनू</string>
+    <string name="common_premium">प्रीमियम</string>
+    <string name="common_link">लिंक</string>
+
+    <string name="downloader_title">वीडियो डाउनलोडर</string>
+    <string name="downloader_subtitle">किसी भी सोशल प्लेटफ़ॉर्म से उच्च गुणवत्ता वाला मीडिया डाउनलोड करें।</string>
+    <string name="downloader_paste_placeholder">यहाँ लिंक पेस्ट करें या ऑटो-डिटेक्ट</string>
+    <string name="downloader_clipboard_empty">क्लिपबोर्ड खाली है</string>
+    <string name="downloader_paste">पेस्ट</string>
+    <string name="downloader_download_video">वीडियो डाउनलोड करें</string>
+    <string name="downloader_direct_links">डायरेक्ट लिंक</string>
+    <string name="downloader_pro_tip">प्रो टिप</string>
+    <string name="downloader_auto_detect_links">ऑटो-डिटेक्ट लिंक</string>
+    <string name="downloader_enable_clipboard_monitoring">तुरंत डाउनलोड के लिए क्लिपबोर्ड मॉनिटरिंग सक्षम करें।</string>
+    <string name="downloader_enable_now">अभी सक्षम करें \u203a</string>
+    <string name="downloader_clipboard_auto_detect_desc">क्लिपबोर्ड ऑटो डिटेक्ट</string>
+
+    <string name="downloads_title">डाउनलोड्स</string>
+    <string name="downloads_empty">अभी कोई डाउनलोड नहीं</string>
+    <string name="downloads_available_storage">उपलब्ध स्टोरेज</string>
+    <string name="downloads_storage_used_format">%2$s GB में से %1$s GB उपयोग</string>
+
+    <string name="download_complete_title">डाउनलोड पूरा हुआ</string>
+    <string name="download_complete_subtitle">आपका वीडियो सफलतापूर्वक डाउनलोड हो गया।</string>
+    <string name="download_complete_view_downloads">डाउनलोड्स देखें</string>
+
+    <string name="language_title">भाषा चुनें</string>
+    <string name="language_subtitle">अब भाषा चुनें, बाद में बदल सकते हैं।</string>
+    <string name="language_confirm">भाषा पुष्टि</string>
+
+    <string name="splash_title">वीडियो डाउनलोडर</string>
+    <string name="splash_subtitle">बेहतरीन वीडियो और संगीत पाएँ\nआसान, तेज़ और मुफ़्त</string>
+</resources>
+

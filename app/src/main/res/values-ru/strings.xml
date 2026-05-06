@@ -1,0 +1,40 @@
+<resources>
+    <string name="app_name">newdownloader26</string>
+
+    <string name="common_ok">ОК</string>
+    <string name="common_continue">Продолжить</string>
+    <string name="common_back">Назад</string>
+    <string name="common_menu">Меню</string>
+    <string name="common_premium">Премиум</string>
+    <string name="common_link">Ссылка</string>
+
+    <string name="downloader_title">Загрузчик видео</string>
+    <string name="downloader_subtitle">Скачивайте медиа в высоком качестве с любой соцсети.</string>
+    <string name="downloader_paste_placeholder">Вставьте ссылку или автоопределение</string>
+    <string name="downloader_clipboard_empty">Буфер обмена пуст</string>
+    <string name="downloader_paste">Вставить</string>
+    <string name="downloader_download_video">Скачать видео</string>
+    <string name="downloader_direct_links">Прямые ссылки</string>
+    <string name="downloader_pro_tip">ПОДСКАЗКА</string>
+    <string name="downloader_auto_detect_links">Автоопределение ссылок</string>
+    <string name="downloader_enable_clipboard_monitoring">Включите мониторинг буфера обмена для мгновенных загрузок.</string>
+    <string name="downloader_enable_now">Включить \u203a</string>
+    <string name="downloader_clipboard_auto_detect_desc">Автоопределение буфера</string>
+
+    <string name="downloads_title">Загрузки</string>
+    <string name="downloads_empty">Загрузок пока нет</string>
+    <string name="downloads_available_storage">Доступная память</string>
+    <string name="downloads_storage_used_format">Использовано %1$s ГБ из %2$s ГБ</string>
+
+    <string name="download_complete_title">Загрузка завершена</string>
+    <string name="download_complete_subtitle">Видео успешно загружено.</string>
+    <string name="download_complete_view_downloads">Открыть загрузки</string>
+
+    <string name="language_title">Выбор языка</string>
+    <string name="language_subtitle">Выберите язык сейчас — позже можно изменить.</string>
+    <string name="language_confirm">Подтвердить язык</string>
+
+    <string name="splash_title">Загрузчик видео</string>
+    <string name="splash_subtitle">Лучшие видео и музыка\nЛегко, быстро и бесплатно</string>
+</resources>
+

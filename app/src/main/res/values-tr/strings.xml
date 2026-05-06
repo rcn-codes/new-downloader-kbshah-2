@@ -1,0 +1,40 @@
+<resources>
+    <string name="app_name">newdownloader26</string>
+
+    <string name="common_ok">Tamam</string>
+    <string name="common_continue">Devam</string>
+    <string name="common_back">Geri</string>
+    <string name="common_menu">Menü</string>
+    <string name="common_premium">Premium</string>
+    <string name="common_link">Bağlantı</string>
+
+    <string name="downloader_title">Video İndirici</string>
+    <string name="downloader_subtitle">Her sosyal platformdan yüksek kaliteli medya indirin.</string>
+    <string name="downloader_paste_placeholder">Bağlantıyı yapıştırın veya otomatik algıla</string>
+    <string name="downloader_clipboard_empty">Pano boş</string>
+    <string name="downloader_paste">Yapıştır</string>
+    <string name="downloader_download_video">Videoyu indir</string>
+    <string name="downloader_direct_links">Doğrudan bağlantılar</string>
+    <string name="downloader_pro_tip">PRO İPUCU</string>
+    <string name="downloader_auto_detect_links">Bağlantıları otomatik algıla</string>
+    <string name="downloader_enable_clipboard_monitoring">Anında indirme için pano izlemeyi etkinleştirin.</string>
+    <string name="downloader_enable_now">Şimdi etkinleştir \u203a</string>
+    <string name="downloader_clipboard_auto_detect_desc">Pano otomatik algılama</string>
+
+    <string name="downloads_title">İndirilenler</string>
+    <string name="downloads_empty">Henüz indirme yok</string>
+    <string name="downloads_available_storage">Kullanılabilir depolama</string>
+    <string name="downloads_storage_used_format">%2$s GB içinde %1$s GB kullanıldı</string>
+
+    <string name="download_complete_title">İndirme tamamlandı</string>
+    <string name="download_complete_subtitle">Videonuz başarıyla indirildi.</string>
+    <string name="download_complete_view_downloads">İndirilenleri gör</string>
+
+    <string name="language_title">Dil seç</string>
+    <string name="language_subtitle">Dil tercihinizi şimdi seçin, sonra değiştirebilirsiniz.</string>
+    <string name="language_confirm">Dili onayla</string>
+
+    <string name="splash_title">Video İndirici</string>
+    <string name="splash_subtitle">En iyi video ve müziği alın\nKolay, hızlı ve ücretsiz</string>
+</resources>
+

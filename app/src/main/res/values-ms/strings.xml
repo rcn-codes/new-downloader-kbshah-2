@@ -1,0 +1,40 @@
+<resources>
+    <string name="app_name">newdownloader26</string>
+
+    <string name="common_ok">OK</string>
+    <string name="common_continue">Teruskan</string>
+    <string name="common_back">Kembali</string>
+    <string name="common_menu">Menu</string>
+    <string name="common_premium">Premium</string>
+    <string name="common_link">Pautan</string>
+
+    <string name="downloader_title">Pemuat Turun Video</string>
+    <string name="downloader_subtitle">Muat turun media berkualiti tinggi dari mana-mana platform sosial.</string>
+    <string name="downloader_paste_placeholder">Tampal pautan di sini atau auto-kesan</string>
+    <string name="downloader_clipboard_empty">Papan klip kosong</string>
+    <string name="downloader_paste">Tampal</string>
+    <string name="downloader_download_video">Muat turun video</string>
+    <string name="downloader_direct_links">Pautan terus</string>
+    <string name="downloader_pro_tip">TIP PRO</string>
+    <string name="downloader_auto_detect_links">Auto-kesan pautan</string>
+    <string name="downloader_enable_clipboard_monitoring">Aktifkan pemantauan papan klip untuk muat turun segera.</string>
+    <string name="downloader_enable_now">Aktifkan sekarang \u203a</string>
+    <string name="downloader_clipboard_auto_detect_desc">Auto-kesan papan klip</string>
+
+    <string name="downloads_title">Muat turun</string>
+    <string name="downloads_empty">Tiada muat turun lagi</string>
+    <string name="downloads_available_storage">Storan tersedia</string>
+    <string name="downloads_storage_used_format">%1$s GB daripada %2$s GB digunakan</string>
+
+    <string name="download_complete_title">Muat turun selesai</string>
+    <string name="download_complete_subtitle">Video anda berjaya dimuat turun.</string>
+    <string name="download_complete_view_downloads">Lihat muat turun</string>
+
+    <string name="language_title">Pilih bahasa</string>
+    <string name="language_subtitle">Pilih bahasa sekarang dan ubah kemudian.</string>
+    <string name="language_confirm">Sahkan bahasa</string>
+
+    <string name="splash_title">Pemuat Turun Video</string>
+    <string name="splash_subtitle">Dapatkan video &amp; muzik terbaik\nMudah, pantas dan percuma</string>
+</resources>
+

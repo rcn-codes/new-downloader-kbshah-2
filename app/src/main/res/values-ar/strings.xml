@@ -1,0 +1,40 @@
+<resources>
+    <string name="app_name">newdownloader26</string>
+
+    <string name="common_ok">حسنًا</string>
+    <string name="common_continue">متابعة</string>
+    <string name="common_back">رجوع</string>
+    <string name="common_menu">القائمة</string>
+    <string name="common_premium">بريميوم</string>
+    <string name="common_link">رابط</string>
+
+    <string name="downloader_title">مُنزّل الفيديوهات</string>
+    <string name="downloader_subtitle">تنزيل وسائط عالية الجودة من أي منصة اجتماعية.</string>
+    <string name="downloader_paste_placeholder">الصق الرابط هنا أو اكتشفه تلقائيًا</string>
+    <string name="downloader_clipboard_empty">الحافظة فارغة</string>
+    <string name="downloader_paste">لصق</string>
+    <string name="downloader_download_video">تنزيل الفيديو</string>
+    <string name="downloader_direct_links">روابط مباشرة</string>
+    <string name="downloader_pro_tip">نصيحة</string>
+    <string name="downloader_auto_detect_links">اكتشاف الروابط تلقائيًا</string>
+    <string name="downloader_enable_clipboard_monitoring">فعّل مراقبة الحافظة للتنزيل الفوري.</string>
+    <string name="downloader_enable_now">فعّل الآن \u203a</string>
+    <string name="downloader_clipboard_auto_detect_desc">اكتشاف الحافظة</string>
+
+    <string name="downloads_title">التنزيلات</string>
+    <string name="downloads_empty">لا توجد تنزيلات بعد</string>
+    <string name="downloads_available_storage">المساحة المتاحة</string>
+    <string name="downloads_storage_used_format">%1$s جيجابايت من %2$s جيجابايت مستخدمة</string>
+
+    <string name="download_complete_title">اكتمل التنزيل</string>
+    <string name="download_complete_subtitle">تم تنزيل الفيديو بنجاح.</string>
+    <string name="download_complete_view_downloads">عرض التنزيلات</string>
+
+    <string name="language_title">اختر اللغة</string>
+    <string name="language_subtitle">اختر لغتك الآن ويمكنك تعديلها لاحقًا.</string>
+    <string name="language_confirm">تأكيد اللغة</string>
+
+    <string name="splash_title">مُنزّل الفيديوهات</string>
+    <string name="splash_subtitle">احصل على أفضل فيديو وموسيقى\nسهل وسريع ومجاني</string>
+</resources>
+

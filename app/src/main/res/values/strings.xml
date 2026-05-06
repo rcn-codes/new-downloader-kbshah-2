@@ -1,0 +1,156 @@
+<resources>
+    <string name="app_name">newdownloader26</string>
+
+    <!-- Common -->
+    <string name="common_ok">OK</string>
+    <string name="common_continue">Continue</string>
+    <string name="common_back">Back</string>
+    <string name="common_close">Close</string>
+    <string name="common_menu">Menu</string>
+    <string name="common_premium">Premium</string>
+    <string name="common_link">Link</string>
+
+    <!-- Downloader -->
+    <string name="downloader_title">Videos Downloader</string>
+    <string name="downloader_subtitle">High-quality media downloaded from any social platform.</string>
+    <string name="downloader_paste_placeholder">Paste your link here or auto-detect</string>
+    <string name="downloader_clipboard_empty">Clipboard is empty</string>
+    <string name="downloader_paste">Paste</string>
+    <string name="downloader_download_video">Download Video</string>
+    <string name="downloader_direct_links">Direct Links</string>
+    <string name="downloader_pro_tip">PRO TIP</string>
+    <string name="downloader_auto_detect_links">Auto-detect Links</string>
+    <string name="downloader_enable_clipboard_monitoring">Enable clipboard monitoring for instant downloads.</string>
+    <string name="downloader_enable_now">Enable Now \u203a</string>
+    <string name="downloader_clipboard_wrong_platform">Clipboard link is not for this platform</string>
+    <string name="downloader_clipboard_auto_detect_desc">Clipboard auto detect</string>
+    <string name="downloader_video_and_music">Video &amp; Music</string>
+    <string name="downloader_video_and_stories">Video &amp; Stories</string>
+    <string name="downloader_reels_and_posts">Reels &amp; Posts</string>
+    <string name="downloader_posts_and_clips">Posts &amp; Clips</string>
+    <string name="downloader_tweets_and_video">Tweets &amp; Video</string>
+    <string name="downloader_fb_saver">FB Saver</string>
+    <string name="downloader_ig_saver">IG Saver</string>
+    <string name="downloader_linkedin_saver">LinkedIn Saver</string>
+    <string name="downloader_axe">Axe</string>
+
+    <!-- Platform downloader -->
+    <string name="platform_tt_headline">Download TT Saver Media</string>
+    <string name="platform_tt_subhead">Save TikTok videos in HD without watermark, straight to your gallery.</string>
+    <string name="platform_ig_headline">Download IG Saver Media</string>
+    <string name="platform_ig_subhead">Quickly save Reels, Posts, and IGTV videos directly to your device in high quality.</string>
+    <string name="platform_fb_headline">Download FB Saver Media</string>
+    <string name="platform_fb_subhead">Save Facebook videos, reels, and stories in high quality to your device.</string>
+    <string name="platform_li_headline">Download LinkedIn Saver Media</string>
+    <string name="platform_li_subhead">Download LinkedIn videos and media posts in best quality with a single tap.</string>
+    <string name="platform_x_headline">Download X Saver Media</string>
+    <string name="platform_x_subhead">Save video and media from X posts quickly in the best available quality.</string>
+    <string name="platform_paste_placeholder">Paste link here...</string>
+    <string name="platform_paste_link">Paste Link</string>
+    <string name="platform_how_to_use">How to use</string>
+    <string name="platform_step_1">1</string>
+    <string name="platform_step_2">2</string>
+    <string name="platform_copy_video_link">Copy video link</string>
+    <string name="platform_copy_video_link_desc">Open Instagram and copy the link of the post or reel.</string>
+    <string name="platform_paste_and_download">Paste &amp; Download</string>
+    <string name="platform_paste_and_download_desc">Paste the link into the field above and tap Download.</string>
+    <string name="platform_download_hd">Download Video (HD)</string>
+
+    <!-- Downloads -->
+    <string name="downloads_title">Downloads</string>
+    <string name="downloads_empty">No downloads yet</string>
+    <string name="downloads_available_storage">Available Storage</string>
+    <string name="downloads_storage_used_format">%1$s GB of %2$s GB used</string>
+
+    <!-- Download complete dialog -->
+    <string name="download_complete_title">Download Complete</string>
+    <string name="download_complete_subtitle">Your video has been download successfully.</string>
+    <string name="download_complete_view_downloads">View Downloads</string>
+
+    <!-- Download phases -->
+    <string name="download_phase_preparing">Preparing</string>
+    <string name="download_phase_downloading">Downloading</string>
+    <string name="download_phase_saving">Saving</string>
+    <string name="download_phase_completed">Completed</string>
+    <string name="download_phase_failed">Failed</string>
+    <string name="download_phase_download">Download</string>
+    <string name="download_saved_to_format">Saved to: %1$s</string>
+
+    <!-- Share / errors -->
+    <string name="share_unable">Unable to share this video</string>
+    <string name="share_chooser_title">Share video</string>
+    <string name="share_no_app">No app found to share</string>
+    <string name="file_unknown_size">Unknown size</string>
+
+    <!-- Platforms -->
+    <string name="platform_all">All</string>
+    <string name="platform_tiktok">TikTok</string>
+    <string name="platform_instagram">Instagram</string>
+    <string name="platform_facebook">Facebook</string>
+    <string name="platform_linkedin">LinkedIn</string>
+    <string name="platform_x">X</string>
+    <string name="platform_other">Other</string>
+
+    <!-- Navigation / top bar -->
+    <string name="nav_home">Home</string>
+    <string name="nav_downloads">Download</string>
+    <string name="topbar_video_player">Video Player</string>
+    <string name="topbar_tiktok_downloader">TikTok Downloader</string>
+    <string name="topbar_instagram_downloader">Instagram Downloader</string>
+    <string name="topbar_facebook_downloader">Facebook Downloader</string>
+    <string name="topbar_linkedin_downloader">LinkedIn Downloader</string>
+    <string name="topbar_x_downloader">X Downloader</string>
+
+    <!-- Permissions / validation -->
+    <string name="permission_storage_needed">Storage permission is needed on Android 9 and below.</string>
+    <string name="downloader_enter_video_url">Please enter a video URL.</string>
+    <string name="downloader_preparing_server">Preparing video on server...</string>
+    <string name="error_something_went_wrong">Something went wrong.</string>
+
+    <!-- Splash / language -->
+    <string name="splash_title">Videos Downloader</string>
+    <string name="splash_subtitle">Get the best video &amp; Music\nEasy, fast and free</string>
+    <string name="language_title">Select Language</string>
+    <string name="language_subtitle">Select Your Language Preference Now, And Modify It Later.</string>
+    <string name="language_confirm">Confirm language</string>
+
+    <!-- Settings -->
+    <string name="settings_title">Settings</string>
+    <string name="settings_get_premium">Get Premium!</string>
+    <string name="settings_premium_description">Save your favorite TikTok videos without watermarks in high quality. Fast, Free &amp; Secure.</string>
+    <string name="settings_try_pro_now">Try Pro Now</string>
+    <string name="settings_try_pro_toast">Pro features coming soon.</string>
+    <string name="settings_how_to_download">How to download</string>
+    <string name="settings_how_to_message">Copy a video link from TikTok or another supported app, return to this app, paste the link in the field on the home screen, then tap Download Video.</string>
+    <string name="settings_auto_detect_link">Auto Detect Link</string>
+    <string name="settings_change_language">Change Language</string>
+    <string name="settings_privacy_policy">Privacy Policy</string>
+    <string name="settings_rate_us">Rate us</string>
+    <string name="settings_more_apps">More Apps</string>
+    <string name="settings_share_app">Share App</string>
+    <string name="settings_share_app_message">Check out %1$s — download videos easily!\nhttps://play.google.com/store/apps/details?id=%2$s</string>
+    <string name="settings_privacy_policy_url">https://policies.google.com/privacy</string>
+    <string name="settings_more_apps_url">https://play.google.com/store/apps</string>
+
+    <!-- Pro / in-app upgrade -->
+    <string name="pro_upgrade_title_prefix">Upgrade to</string>
+    <string name="pro_upgrade_badge">PRO</string>
+    <string name="pro_feature_unlimited">Unlimited Downloads</string>
+    <string name="pro_feature_faster">2x Faster Downloads</string>
+    <string name="pro_feature_ad_free">100% Ad-Free Experience</string>
+    <string name="pro_plan_weekly">Weekly</string>
+    <string name="pro_plan_monthly">Monthly</string>
+    <string name="pro_plan_lifetime">Life-Time</string>
+    <string name="pro_price_weekly">680.00 Pkr</string>
+    <string name="pro_price_monthly">5,200.00 Pkr</string>
+    <string name="pro_price_lifetime">10,250.00 Pkr</string>
+    <string name="pro_off_badge">30% OFF</string>
+    <string name="pro_buy_now">Buy Now</string>
+    <string name="pro_legal_disclaimer">To Cancel anytime please visit your google play store settings. Subscriptions automatically renew unless auto renew is cancelled At least 24 hours before the last date</string>
+    <string name="pro_terms">Terms &amp; Services</string>
+    <string name="pro_privacy">Privacy policy</string>
+    <string name="pro_restore">Restore purchase</string>
+    <string name="pro_footer_separator">|</string>
+    <string name="pro_terms_url">https://policies.google.com/terms</string>
+    <string name="pro_restore_toast">Restore purchases is not configured yet.</string>
+</resources>

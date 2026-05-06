@@ -1,0 +1,40 @@
+<resources>
+    <string name="app_name">newdownloader26</string>
+
+    <string name="common_ok">确定</string>
+    <string name="common_continue">继续</string>
+    <string name="common_back">返回</string>
+    <string name="common_menu">菜单</string>
+    <string name="common_premium">高级版</string>
+    <string name="common_link">链接</string>
+
+    <string name="downloader_title">视频下载器</string>
+    <string name="downloader_subtitle">从任何社交平台下载高质量媒体。</string>
+    <string name="downloader_paste_placeholder">在此粘贴链接或自动识别</string>
+    <string name="downloader_clipboard_empty">剪贴板为空</string>
+    <string name="downloader_paste">粘贴</string>
+    <string name="downloader_download_video">下载视频</string>
+    <string name="downloader_direct_links">快捷入口</string>
+    <string name="downloader_pro_tip">小贴士</string>
+    <string name="downloader_auto_detect_links">自动识别链接</string>
+    <string name="downloader_enable_clipboard_monitoring">开启剪贴板监控，快速下载。</string>
+    <string name="downloader_enable_now">立即开启 \u203a</string>
+    <string name="downloader_clipboard_auto_detect_desc">剪贴板自动识别</string>
+
+    <string name="downloads_title">下载</string>
+    <string name="downloads_empty">暂无下载内容</string>
+    <string name="downloads_available_storage">可用存储</string>
+    <string name="downloads_storage_used_format">已用 %1$s GB / 共 %2$s GB</string>
+
+    <string name="download_complete_title">下载完成</string>
+    <string name="download_complete_subtitle">视频已成功下载。</string>
+    <string name="download_complete_view_downloads">查看下载</string>
+
+    <string name="language_title">选择语言</string>
+    <string name="language_subtitle">现在选择语言偏好，之后也可修改。</string>
+    <string name="language_confirm">确认语言</string>
+
+    <string name="splash_title">视频下载器</string>
+    <string name="splash_subtitle">获取最佳视频与音乐\n简单、快速、免费</string>
+</resources>
+
