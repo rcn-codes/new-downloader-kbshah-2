@@ -1,9 +1,11 @@
 package com.example.newdownloader26.presentation.navigation
 
+import android.app.Activity
 import android.content.Context
 import android.content.Intent
 import android.net.Uri
 import android.widget.Toast
+import androidx.activity.compose.BackHandler
 import androidx.compose.animation.AnimatedContent
 import androidx.compose.animation.AnimatedContentTransitionScope
 import androidx.compose.animation.ContentTransform
@@ -43,6 +45,7 @@ import com.example.newdownloader26.core.localization.AppLocale
 import com.example.newdownloader26.presentation.components.AppBottomBar
 import com.example.newdownloader26.presentation.components.AppTopBar
 import com.example.newdownloader26.presentation.components.BottomDestination
+import com.example.newdownloader26.presentation.components.ExitConfirmDialog
 import com.example.newdownloader26.presentation.downloads.DownloadsScreen
 import com.example.newdownloader26.presentation.downloads.DownloadsViewModel
 import com.example.newdownloader26.presentation.downloader.DownloadPlatform
@@ -61,8 +64,13 @@ import com.example.newdownloader26.presentation.player.VideoPlayerScreen
 import com.example.newdownloader26.presentation.pro.ProUpgradeScreen
 import com.example.newdownloader26.presentation.settings.SettingsScreen
 import com.example.newdownloader26.presentation.settings.SettingsViewModel
+import com.example.newdownloader26.core.managers.InternetManager
+import com.example.newdownloader26.data.local.SettingsPreferences
+import com.example.newdownloader26.presentation.components.DisclaimerDialog
+import com.example.newdownloader26.presentation.components.NoInternetDialog
 import kotlinx.serialization.Serializable
 import org.koin.androidx.compose.koinViewModel
+import org.koin.androidx.compose.get
 import org.koin.core.parameter.parametersOf
 import java.util.Map.entry
 
@@ -111,9 +119,11 @@ private fun topBarKey(route: NavKey?): TopBarKey = when (route) {
 @Composable
 fun AppNavigation() {
     val context = LocalContext.current
+    val activity = remember(context) { context as? Activity }
     val backStack: NavBackStack<NavKey> = rememberNavBackStack(SplashRoute)
     val currentRoute = backStack.lastOrNull()
     var selectedVideoUri by remember { mutableStateOf<String?>(null) }
+    var showExitDialog by remember { mutableStateOf(false) }
 
     // Language
     val initialTag = remember { AppLocale.getSavedLanguageTag(context) ?: "en" }
@@ -133,7 +143,17 @@ fun AppNavigation() {
         entryProvider {
             entry<SplashRoute> {
 
-                SplashScreen( onFinished = { if (AppLocale.getSavedLanguageTag(context).isNullOrBlank()) { backStack.add(LanguageRoute) } else { backStack.add(HomeRoute) } } )
+                SplashScreen(
+                    onFinished = {
+                        // Replace Splash as root so back from Home doesn't return to Splash.
+                        backStack.removeIf { true }
+                        if (AppLocale.getSavedLanguageTag(context).isNullOrBlank()) {
+                            backStack.add(LanguageRoute)
+                        } else {
+                            backStack.add(HomeRoute)
+                        }
+                    }
+                )
             }
 
             entry<LanguageRoute> {
@@ -238,6 +258,16 @@ fun AppNavigation() {
         }
     }
 
+    val isExitEligibleRoute = currentRoute == HomeRoute || currentRoute == DownloadsRoute
+
+    BackHandler(enabled = true) {
+        when {
+            backStack.size > 1 -> onBack()
+            isExitEligibleRoute -> showExitDialog = true
+            else -> activity?.finish()
+        }
+    }
+
     // ✅ MutableInteractionSource hoisted here — safe composable scope
     val languageInteraction = remember { MutableInteractionSource() }
 
@@ -330,6 +360,16 @@ fun AppNavigation() {
             onBack   = onBack
         )
     }
+
+    if (showExitDialog) {
+        ExitConfirmDialog(
+            onExit = {
+                showExitDialog = false
+                activity?.finish()
+            },
+            onDismiss = { showExitDialog = false }
+        )
+    }
 }
 
 // ─── TopBar for main routes ───────────────────────────────────────────────────
@@ -391,8 +431,29 @@ private fun HomeRouteScreen(
     onOpenPlatform: (DownloadPlatform) -> Unit,
     onViewDownloads: () -> Unit,
 ) {
+    val internetManager: InternetManager = get()
+    val preferences: SettingsPreferences = get()
+    var connected by remember { mutableStateOf(internetManager.isInternetConnected) }
+    var disclaimerAccepted by remember { mutableStateOf(preferences.isDisclaimerAccepted()) }
+
     val viewModel: DownloaderViewModel = koinViewModel()
     val state by viewModel.state.collectAsStateWithLifecycle()
+
+    if (!connected) {
+        NoInternetDialog(
+            onRetry = { connected = internetManager.isInternetConnected }
+        )
+    }
+
+    if (connected && !disclaimerAccepted) {
+        DisclaimerDialog(
+            onOk = {
+                preferences.setDisclaimerAccepted(true)
+                disclaimerAccepted = true
+            }
+        )
+    }
+
     DownloaderScreen(
         state                     = state,
         effect                    = viewModel.effect,

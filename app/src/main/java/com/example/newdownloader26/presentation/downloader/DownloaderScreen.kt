@@ -43,6 +43,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.newdownloader26.R
 import com.example.newdownloader26.presentation.components.CommonSurface
+import com.example.newdownloader26.presentation.components.InvalidLinkDialog
 import kotlinx.coroutines.flow.SharedFlow
 import kotlinx.serialization.Serializable
 import androidx.annotation.StringRes
@@ -281,6 +282,12 @@ fun DownloaderScreen(
             state = state,
             onDismiss = { onIntent(DownloaderIntent.OnDismissDownloadDialog) },
             onViewDownloads = onViewDownloads
+        )
+    }
+
+    if (state.showInvalidLinkDialog) {
+        InvalidLinkDialog(
+            onClose = { onIntent(DownloaderIntent.OnDismissInvalidLinkDialog) }
         )
     }
 }

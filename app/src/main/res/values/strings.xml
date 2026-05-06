@@ -10,6 +10,36 @@
     <string name="common_premium">Premium</string>
     <string name="common_link">Link</string>
 
+    <!-- Exit dialog -->
+    <string name="exit_dialog_title">Exit?</string>
+    <string name="exit_dialog_message">Are you sure you want to exit?</string>
+    <string name="exit_dialog_yes">Yes</string>
+    <string name="exit_dialog_cancel">Cancel</string>
+
+    <!-- No internet dialog -->
+    <string name="no_internet_title">No Internet Connection</string>
+    <string name="no_internet_message">Please check your internet and try again.</string>
+    <string name="no_internet_retry">Retry</string>
+
+    <!-- Disclaimer dialog -->
+    <string name="disclaimer_title">Disclaimer</string>
+    <string name="disclaimer_message">Due to legal restrictions our downloader app does not support downloading YouTube videos. This aligns With YouTube\'s terms Of services and commitment to legal and ethical guidelines.\n\nUsers are encouraged to respect copyright and obtain permission before reposting any downloaded content without authorized actions are the users sole responsibility. We do not upload, store or collect any downloaded or personal data from your device.</string>
+    <string name="disclaimer_ok">Okay</string>
+
+    <!-- Delete dialogs -->
+    <string name="delete_dialog_title">Delete Files?</string>
+    <string name="delete_dialog_message">Are you sure you want to delete this file? This action cannot be undone.</string>
+    <string name="delete_dialog_delete">Delete</string>
+    <string name="delete_dialog_cancel">Cancel</string>
+    <string name="file_deleted_title">File Deleted</string>
+    <string name="file_deleted_message">The file has been permanently removed from your storage</string>
+    <string name="file_deleted_dismiss">Dismiss</string>
+
+    <!-- Invalid link dialog -->
+    <string name="invalid_link_title">Invalid Link</string>
+    <string name="invalid_link_message">Please check the URL and try again.</string>
+    <string name="invalid_link_close">Close</string>
+
     <!-- Downloader -->
     <string name="downloader_title">Videos Downloader</string>
     <string name="downloader_subtitle">High-quality media downloaded from any social platform.</string>

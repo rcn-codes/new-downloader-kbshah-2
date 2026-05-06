@@ -33,6 +33,8 @@ private val LightColorScheme = lightColorScheme(
     onTertiary = Color.White,
     onBackground = Color(0xFF1C1B1F),
     onSurface = Color(0xFF1C1B1F),
+    outline = Outline40,
+    surfaceVariant = TextLiteGrey40
 )
 
 @Composable

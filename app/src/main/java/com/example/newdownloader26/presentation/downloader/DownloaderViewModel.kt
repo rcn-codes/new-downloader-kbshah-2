@@ -1,6 +1,7 @@
 package com.example.newdownloader26.presentation.downloader
 
 import android.app.Application
+import android.net.Uri
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.newdownloader26.R
@@ -59,13 +60,51 @@ class DownloaderViewModel(
         when (intent) {
             is DownloaderIntent.OnUrlChanged -> {
                 if (intent.url.isBlank()) lastClipboardProcessed = null
-                _state.update { it.copy(url = intent.url, isError = false, statusMessage = "") }
+                _state.update {
+                    it.copy(
+                        url = intent.url,
+                        isError = false,
+                        statusMessage = "",
+                        statusMessageRes = null,
+                        showInvalidLinkDialog = false
+                    )
+                }
             }
             DownloaderIntent.OnDownloadClicked -> download()
             DownloaderIntent.OnDismissDownloadDialog -> {
                 _state.update { it.copy(showDownloadDialog = false) }
             }
+            DownloaderIntent.OnDismissInvalidLinkDialog -> {
+                _state.update { it.copy(showInvalidLinkDialog = false) }
+            }
         }
+    }
+
+    private fun isYoutubeUrl(url: String): Boolean {
+        val host = runCatching { Uri.parse(url).host?.lowercase() }.getOrNull() ?: return false
+        return host == "youtu.be" || host.endsWith(".youtu.be") ||
+            host == "youtube.com" || host.endsWith(".youtube.com") ||
+            host == "m.youtube.com" || host.endsWith(".m.youtube.com")
+    }
+
+    private fun showInvalidLink(message: String? = null) {
+        _state.update {
+            it.copy(
+                isLoading = false,
+                isError = true,
+                showDownloadDialog = false,
+                showInvalidLinkDialog = true,
+                downloadPhase = DownloadPhase.FAILED,
+                statusMessage = message.orEmpty(),
+                statusMessageRes = null
+            )
+        }
+    }
+
+    private fun isInvalidLinkMessage(message: String?): Boolean {
+        if (message.isNullOrBlank()) return false
+        val m = message.lowercase()
+        return m.contains("invalid") && m.contains("link")
     }
 
     private fun download() {
@@ -78,6 +117,20 @@ class DownloaderViewModel(
                     statusMessageRes = R.string.downloader_enter_video_url
                 )
             }
+            viewModelScope.launch {
+                _effect.emit(
+                    DownloaderEffect.ShowToast(
+                        getApplication<Application>().getString(R.string.downloader_enter_video_url)
+                    )
+                )
+            }
+            return
+        }
+
+        val input = current.url.trim()
+        val url = AutoPasteManager.extractFirstHttpUrl(input)
+        if (url == null || isYoutubeUrl(url)) {
+            showInvalidLink()
             return
         }
 
@@ -87,6 +140,7 @@ class DownloaderViewModel(
                     isLoading = true,
                     isError = false,
                     showDownloadDialog = true,
+                    showInvalidLinkDialog = false,
                     downloadPhase = DownloadPhase.PREPARING,
                     progressPercent = null,
                     savedPath = null,
@@ -95,12 +149,16 @@ class DownloaderViewModel(
                 )
             }
 
-            val result = downloadVideoUseCase(DownloadRequest(url = current.url.trim())) { progress ->
+            val result = downloadVideoUseCase(DownloadRequest(url = url)) { progress ->
                 updateProgress(progress)
             }
 
             result.fold(
                 onSuccess = { response ->
+                    if (!response.success && isInvalidLinkMessage(response.message)) {
+                        showInvalidLink(response.message)
+                        return@fold
+                    }
                     _state.update {
                         it.copy(
                             isLoading = false,
@@ -118,6 +176,10 @@ class DownloaderViewModel(
                 onFailure = { throwable ->
                     val fallback = R.string.error_something_went_wrong
                     val message = throwable.message
+                    if (isInvalidLinkMessage(message)) {
+                        showInvalidLink(message)
+                        return@fold
+                    }
                     _state.update {
                         it.copy(
                             isLoading = false,

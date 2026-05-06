@@ -1,6 +1,9 @@
 package com.example.newdownloader26.core.di
 
+import android.content.Context
+import android.net.ConnectivityManager
 import com.example.newdownloader26.BuildConfig
+import com.example.newdownloader26.core.managers.InternetManager
 import com.example.newdownloader26.data.local.AutoPasteManager
 import com.example.newdownloader26.data.local.DeviceVideoStore
 import com.example.newdownloader26.data.local.SettingsPreferences
@@ -55,6 +58,10 @@ val appModule = module {
     single { DeviceVideoStore(androidContext()) }
     single { SettingsPreferences(androidContext()) }
     single { AutoPasteManager(androidContext(), get()) }
+    single {
+        androidContext().getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
+    }
+    single { InternetManager(get()) }
     single<VideoApiService> { get<Retrofit>().create(VideoApiService::class.java) }
     single<VideoRepository> { VideoRepositoryImpl(androidContext(), get()) }
     single { DownloadVideoUseCase(get()) }

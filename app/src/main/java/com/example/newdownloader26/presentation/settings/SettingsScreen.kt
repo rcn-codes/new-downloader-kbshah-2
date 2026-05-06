@@ -75,7 +75,7 @@ fun SettingsScreen(
         Spacer(modifier = Modifier.height(10.sdp))
 
         SettingsNavRow(
-            iconRes = R.drawable.ic_how_to_download,
+            iconRes = R.drawable.ic_how_to_download_setting,
             label = stringResource(R.string.settings_how_to_download),
             onClick = { showHowToDialog = true }
         )

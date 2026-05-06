@@ -8,7 +8,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.composed
 
-private const val DEFAULT_DEBOUNCE_MS = 1000L
+private const val DEFAULT_DEBOUNCE_MS = 350L
 
 /**
  * Debounced click handler for Compose.

@@ -29,7 +29,9 @@ class DownloadsViewModel(
                     it.copy(selectedFilter = intent.platform, visibleItems = filtered)
                 }
             }
-            is DownloadsIntent.OnDeleteClicked -> deleteVideo(intent.item)
+            is DownloadsIntent.OnDeleteClicked -> Unit
+            is DownloadsIntent.OnDeleteConfirmed -> deleteVideo(intent.item)
+            DownloadsIntent.OnDeletedDialogDismissed -> _state.update { it.copy(showDeletedSuccess = false) }
         }
     }
 
@@ -56,6 +58,7 @@ class DownloadsViewModel(
             withContext(Dispatchers.IO) {
                 deviceVideoStore.deleteByUri(uri)
             }
+            _state.update { it.copy(showDeletedSuccess = true) }
             load()
         }
     }

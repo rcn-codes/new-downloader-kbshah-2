@@ -37,7 +37,10 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.produceState
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
@@ -53,6 +56,8 @@ import com.example.newdownloader26.R
 import com.example.newdownloader26.domain.model.DownloadedVideo
 import com.example.newdownloader26.domain.model.SourcePlatform
 import com.example.newdownloader26.presentation.components.CommonSurface
+import com.example.newdownloader26.presentation.components.DeleteConfirmDialog
+import com.example.newdownloader26.presentation.components.FileDeletedDialog
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import network.chaintech.sdpcomposemultiplatform.sdp
@@ -69,6 +74,7 @@ fun DownloadsScreen(
 ) {
     val context = LocalContext.current
     LaunchedEffect(Unit) { onIntent(DownloadsIntent.OnLoad) }
+    var pendingDelete by remember { mutableStateOf<DownloadedVideo?>(null) }
 
     Column(
         modifier = modifier
@@ -116,7 +122,10 @@ fun DownloadsScreen(
                         item = item,
                         onClick = { onOpenVideo(item) },
                         onShareClick = { shareVideo(context, item) },
-                        onDeleteClick = { onIntent(DownloadsIntent.OnDeleteClicked(item)) }
+                        onDeleteClick = {
+                            pendingDelete = item
+                            onIntent(DownloadsIntent.OnDeleteClicked(item))
+                        }
                     )
                 }
             }
@@ -124,6 +133,22 @@ fun DownloadsScreen(
 
         Spacer(modifier = Modifier.height(12.dp))
         AvailableStorageCard()
+    }
+
+    pendingDelete?.let { item ->
+        DeleteConfirmDialog(
+            onDelete = {
+                pendingDelete = null
+                onIntent(DownloadsIntent.OnDeleteConfirmed(item))
+            },
+            onCancel = { pendingDelete = null }
+        )
+    }
+
+    if (state.showDeletedSuccess) {
+        FileDeletedDialog(
+            onDismiss = { onIntent(DownloadsIntent.OnDeletedDialogDismissed) }
+        )
     }
 }
 
