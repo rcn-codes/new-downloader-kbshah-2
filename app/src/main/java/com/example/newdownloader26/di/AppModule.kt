@@ -10,7 +10,7 @@ import com.example.newdownloader26.domain.repository.VideoRepository
 import com.example.newdownloader26.domain.usecase.DownloadVideoUseCase
 import com.example.newdownloader26.presentation.downloads.DownloadsViewModel
 import com.example.newdownloader26.presentation.downloader.DownloaderViewModel
-import com.example.newdownloader26.presentation.onboarding.LanguageViewModel
+import com.example.newdownloader26.presentation.language.LanguageViewModel
 import com.example.newdownloader26.presentation.settings.SettingsViewModel
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor

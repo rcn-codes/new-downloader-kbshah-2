@@ -56,10 +56,10 @@ import com.example.newdownloader26.presentation.downloader.InstagramPlatformScre
 import com.example.newdownloader26.presentation.downloader.LinkedInPlatformScreen
 import com.example.newdownloader26.presentation.downloader.TikTokPlatformScreen
 import com.example.newdownloader26.presentation.downloader.XPlatformScreen
-import com.example.newdownloader26.presentation.onboarding.LanguageOption
-import com.example.newdownloader26.presentation.onboarding.LanguageScreen
-import com.example.newdownloader26.presentation.onboarding.LanguageViewModel
-import com.example.newdownloader26.presentation.onboarding.SplashScreen
+import com.example.newdownloader26.presentation.language.LanguageOption
+import com.example.newdownloader26.presentation.language.LanguageScreen
+import com.example.newdownloader26.presentation.language.LanguageViewModel
+import com.example.newdownloader26.presentation.language.SplashScreen
 import com.example.newdownloader26.presentation.player.VideoPlayerScreen
 import com.example.newdownloader26.presentation.pro.ProUpgradeScreen
 import com.example.newdownloader26.presentation.settings.SettingsScreen
@@ -72,7 +72,6 @@ import kotlinx.serialization.Serializable
 import org.koin.androidx.compose.koinViewModel
 import org.koin.androidx.compose.get
 import org.koin.core.parameter.parametersOf
-import java.util.Map.entry
 
 // ─── Routes ───────────────────────────────────────────────────────────────────
 

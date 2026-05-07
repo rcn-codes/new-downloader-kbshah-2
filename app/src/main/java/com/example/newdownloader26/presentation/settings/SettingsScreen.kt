@@ -5,6 +5,7 @@ import android.content.Context
 import android.content.Intent
 import android.net.Uri
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -19,7 +20,9 @@ import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.AlertDialog
+import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Surface
 import androidx.compose.material3.Switch
 import androidx.compose.material3.SwitchDefaults
 import androidx.compose.material3.Text
@@ -40,17 +43,14 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
-import androidx.compose.ui.unit.sp
 import com.airbnb.lottie.compose.LottieAnimation
 import com.airbnb.lottie.compose.LottieCompositionSpec
 import com.airbnb.lottie.compose.LottieConstants
 import com.airbnb.lottie.compose.rememberLottieComposition
 import com.example.newdownloader26.R
 import com.example.newdownloader26.presentation.components.CommonSurface
-import androidx.compose.foundation.clickable
-import androidx.compose.material3.Icon
-import androidx.compose.material3.Surface
 import network.chaintech.sdpcomposemultiplatform.sdp
+import network.chaintech.sdpcomposemultiplatform.ssp
 
 @Composable
 fun SettingsScreen(
@@ -72,27 +72,27 @@ fun SettingsScreen(
     ) {
         Spacer(modifier = Modifier.height(5.sdp))
         PremiumPromoCard(onTryPro = onOpenProUpgrade)
-        Spacer(modifier = Modifier.height(10.sdp))
+        Spacer(modifier = Modifier.height(12.sdp))
 
         SettingsNavRow(
             iconRes = R.drawable.ic_how_to_download_setting,
             label = stringResource(R.string.settings_how_to_download),
             onClick = { showHowToDialog = true }
         )
-        Spacer(modifier = Modifier.height(12.dp))
+        Spacer(modifier = Modifier.height(9.sdp))
         SettingsToggleRow(
             iconRes = R.drawable.ic_auto_detect,
             label = stringResource(R.string.settings_auto_detect_link),
             checked = autoDetectEnabled,
             onCheckedChange = onAutoDetectChange
         )
-        Spacer(modifier = Modifier.height(12.dp))
+        Spacer(modifier = Modifier.height(9.sdp))
         SettingsNavRow(
             iconRes = R.drawable.ic_language,
             label = stringResource(R.string.settings_change_language),
             onClick = onChangeLanguage
         )
-        Spacer(modifier = Modifier.height(12.dp))
+        Spacer(modifier = Modifier.height(9.sdp))
         SettingsNavRow(
             iconRes = R.drawable.ic_privacy_policy,
             label = stringResource(R.string.settings_privacy_policy),
@@ -100,13 +100,13 @@ fun SettingsScreen(
                 context.openExternalUrl(context.getString(R.string.settings_privacy_policy_url))
             }
         )
-        Spacer(modifier = Modifier.height(12.dp))
+        Spacer(modifier = Modifier.height(9.sdp))
         SettingsNavRow(
             iconRes = R.drawable.ic_rate_us,
             label = stringResource(R.string.settings_rate_us),
             onClick = { context.openPlayStoreForRating() }
         )
-        Spacer(modifier = Modifier.height(12.dp))
+        Spacer(modifier = Modifier.height(9.sdp))
         SettingsNavRow(
             iconRes = R.drawable.ic_more_apps,
             label = stringResource(R.string.settings_more_apps),
@@ -114,7 +114,7 @@ fun SettingsScreen(
                 context.openExternalUrl(context.getString(R.string.settings_more_apps_url))
             }
         )
-        Spacer(modifier = Modifier.height(12.dp))
+        Spacer(modifier = Modifier.height(9.sdp))
         SettingsNavRow(
             iconRes = R.drawable.ic_share_app,
             label = stringResource(R.string.settings_share_app),
@@ -153,9 +153,9 @@ private fun PremiumPromoCard(
     )
     CommonSurface(
         modifier = modifier,
-        shape = RoundedCornerShape(24.dp),
+        shape = RoundedCornerShape(16.sdp),
         color = Color(0xFFF0F0F0),
-        shadowElevation = 1,
+        shadowElevation = 2,
         enabled = false
     ) {
         Column(
@@ -165,7 +165,7 @@ private fun PremiumPromoCard(
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
             Box(
-                modifier = Modifier.size(50.sdp),
+                modifier = Modifier.size(48.sdp),
                 contentAlignment = Alignment.Center
             ) {
                 LottieAnimation(
@@ -174,27 +174,27 @@ private fun PremiumPromoCard(
                     modifier = Modifier.size(48.sdp)
                 )
             }
-            Spacer(modifier = Modifier.height(12.dp))
+            Spacer(modifier = Modifier.height(7.sdp))
             Text(
                 text = stringResource(R.string.settings_get_premium),
                 style = MaterialTheme.typography.titleLarge,
                 fontWeight = FontWeight.Bold,
                 color = Color(0xFF1D1D1D)
             )
-            Spacer(modifier = Modifier.height(8.dp))
+            Spacer(modifier = Modifier.height(6.sdp))
             Text(
                 text = stringResource(R.string.settings_premium_description),
                 style = MaterialTheme.typography.bodyMedium,
                 color = Color(0xFF787F82),
                 textAlign = TextAlign.Center,
-                lineHeight = 22.sp
-            )
-            Spacer(modifier = Modifier.height(22.dp))
+                )
+            Spacer(modifier = Modifier.height(10.sdp))
             Box(
                 modifier = Modifier
                     .fillMaxWidth()
-                    .height(52.dp)
-                    .clip(RoundedCornerShape(26.dp))
+                    .height(34.sdp)
+                    .padding(horizontal = 5.sdp)
+                    .clip(RoundedCornerShape(18.sdp))
                     .background(
                         Brush.horizontalGradient(
                             colors = listOf(
@@ -209,7 +209,6 @@ private fun PremiumPromoCard(
                 Text(
                     text = stringResource(R.string.settings_try_pro_now),
                     color = Color.White,
-                    fontWeight = FontWeight.Bold,
                     style = MaterialTheme.typography.titleMedium
                 )
             }
@@ -226,7 +225,7 @@ private fun SettingsNavRow(
 ) {
     CommonSurface(
         modifier = modifier,
-        shape = RoundedCornerShape(18.dp),
+        shape = RoundedCornerShape(13.sdp),
         color = Color(0xFFF0F0F0),
         shadowElevation = 1,
         onClick = onClick
@@ -234,14 +233,14 @@ private fun SettingsNavRow(
         Row(
             modifier = Modifier
                 .fillMaxWidth()
-                .padding(horizontal = 14.dp, vertical = 14.dp),
+                .padding(horizontal = 10.sdp, vertical = 10.sdp),
             verticalAlignment = Alignment.CenterVertically,
-            horizontalArrangement = Arrangement.spacedBy(14.dp)
+            horizontalArrangement = Arrangement.spacedBy(10.sdp)
         ) {
             Icon(
                 painter = painterResource(iconRes),
                 contentDescription = null,
-                modifier = Modifier.size(40.dp),
+                modifier = Modifier.size(28.sdp),
                 tint = Color.Unspecified
             )
             Text(
@@ -265,21 +264,21 @@ private fun SettingsToggleRow(
 ) {
     Surface(
         modifier = modifier.fillMaxWidth(),
-        shape = RoundedCornerShape(18.dp),
+        shape = RoundedCornerShape(13.sdp),
         color = Color(0xFFF0F0F0),
         shadowElevation = 1.dp
     ) {
         Row(
             modifier = Modifier
                 .fillMaxWidth()
-                .padding(horizontal = 14.dp, vertical = 8.dp),
+                .padding(horizontal = 10.sdp, vertical = 6.sdp),
             verticalAlignment = Alignment.CenterVertically,
-            horizontalArrangement = Arrangement.spacedBy(14.dp)
+            horizontalArrangement = Arrangement.spacedBy(10.sdp)
         ) {
             Icon(
                 painter = painterResource(iconRes),
                 contentDescription = null,
-                modifier = Modifier.size(40.dp),
+                modifier = Modifier.size(28.sdp),
                 tint = Color.Unspecified
             )
             Text(

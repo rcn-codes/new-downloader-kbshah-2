@@ -1,4 +1,4 @@
-package com.example.newdownloader26.presentation.onboarding
+package com.example.newdownloader26.presentation.language
 
 import androidx.annotation.DrawableRes
 

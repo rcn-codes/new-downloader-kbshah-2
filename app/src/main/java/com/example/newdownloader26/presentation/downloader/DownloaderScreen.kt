@@ -48,6 +48,7 @@ import kotlinx.coroutines.flow.SharedFlow
 import kotlinx.serialization.Serializable
 import androidx.annotation.StringRes
 import network.chaintech.sdpcomposemultiplatform.sdp
+import network.chaintech.sdpcomposemultiplatform.ssp
 
 @Serializable
 enum class DownloadPlatform(
@@ -101,7 +102,7 @@ fun DownloaderScreen(
         modifier = modifier
             .fillMaxSize()
             .background(Color(0xFFF7F9FB))
-            .padding(start = 16.dp, end = 16.dp)
+            .padding(start = 12.sdp, end = 12.sdp)
             .verticalScroll(rememberScrollState())
     ) {
 
@@ -111,15 +112,15 @@ fun DownloaderScreen(
                 style = MaterialTheme.typography.headlineSmall,
                 fontWeight = FontWeight.Bold
             )
-            Spacer(modifier = Modifier.height(6.dp))
+            Spacer(modifier = Modifier.height(5.sdp))
             Text(
                 subtitle,
                 style = MaterialTheme.typography.bodyMedium,
                 color = Color(0xFF787F82)
             )
-            Spacer(modifier = Modifier.height(16.dp))
+            Spacer(modifier = Modifier.height(13.sdp))
         }
-        CommonSurface(enabled = false, shape = RoundedCornerShape(16.dp)) {
+        CommonSurface(enabled = false, shape = RoundedCornerShape(13.sdp)) {
             OutlinedTextField(
                 value = state.url,
                 onValueChange = { onIntent(DownloaderIntent.OnUrlChanged(it)) },
@@ -127,21 +128,21 @@ fun DownloaderScreen(
                     Text(
                         stringResource(R.string.downloader_paste_placeholder),
                         color = Color(0xFFB3B3B3),
-                        fontSize = 14.sp,
+                        fontSize = 12.ssp,
                         maxLines = 1
                     )
                 },
                 singleLine = true,
                 modifier = Modifier
                     .fillMaxWidth()
-                    .padding(vertical = 5.dp),
-                shape = RoundedCornerShape(16.dp),
+                    .padding(vertical = 4.sdp),
+                shape = RoundedCornerShape(13.sdp),
                 leadingIcon = {
                     Icon(
                         painter = painterResource(R.drawable.ic_link),
                         contentDescription = stringResource(R.string.common_link),
                         tint = Color.Unspecified,
-                        modifier = Modifier.size(18.dp)
+                        modifier = Modifier.size(15.sdp)
 
                     )
                 },
@@ -154,10 +155,10 @@ fun DownloaderScreen(
                 trailingIcon = {
                     Box(
                         modifier = Modifier
-                            .padding(end = 12.dp)
-                            .clip(RoundedCornerShape(99.dp))
+                            .padding(end = 10.sdp)
+                            .clip(RoundedCornerShape(99.sdp))
                             .background(Color(0x1400B306))
-                            .padding(horizontal = 3.dp, vertical = 2.dp)
+                            .padding(horizontal = 2.sdp, vertical = 2.sdp)
                             .clickable {
                                 val text = clipboardManager.getText()?.text?.toString()?.trim().orEmpty()
                                 if (text.isBlank()) {
@@ -170,7 +171,7 @@ fun DownloaderScreen(
                                     onIntent(DownloaderIntent.OnUrlChanged(text))
                                 }
                             }
-                            .padding(horizontal = 10.dp, vertical = 4.dp)
+                            .padding(horizontal = 8.sdp, vertical = 3.sdp)
                     ) {
                         Text(
                             stringResource(R.string.downloader_paste),
@@ -181,20 +182,20 @@ fun DownloaderScreen(
                 }
             )
         }
-        Spacer(modifier = Modifier.height(14.dp))
+        Spacer(modifier = Modifier.height(11.sdp))
         Button(
             onClick = onDownloadClick,
             enabled = !state.isLoading,
-            shape = RoundedCornerShape(16.dp),
+            shape = RoundedCornerShape(13.sdp),
             colors = ButtonDefaults.buttonColors(containerColor = Color(0xFFF22B29)),
             modifier = Modifier
                 .fillMaxWidth()
-                .height(53.dp)
+                .height(43.sdp)
         ) {
             if (state.isLoading) {
                 CircularProgressIndicator(
-                    modifier = Modifier.size(20.dp),
-                    strokeWidth = 2.dp,
+                    modifier = Modifier.size(16.sdp),
+                    strokeWidth = 2.sdp,
                     color = Color.White
                 )
             } else {
@@ -202,9 +203,9 @@ fun DownloaderScreen(
                     painter = painterResource(R.drawable.ic_download),
                     contentDescription = null,
                     tint = Color.Unspecified,
-                    modifier = Modifier.size(16.dp)
+                    modifier = Modifier.size(13.sdp)
                 )
-                Spacer(modifier = Modifier.size(8.dp))
+                Spacer(modifier = Modifier.size(7.sdp))
                 Text(
                     stringResource(R.string.downloader_download_video),
                     color = Color(0xFFFAF8FF),
@@ -214,59 +215,59 @@ fun DownloaderScreen(
         }
 
         if (showDirectLinks) {
-            Spacer(modifier = Modifier.height(16.dp))
+            Spacer(modifier = Modifier.height(13.sdp))
             Text(
                 stringResource(R.string.downloader_direct_links),
                 style = MaterialTheme.typography.titleLarge,
                 fontWeight = FontWeight.Bold
             )
-            Spacer(modifier = Modifier.height(10.dp))
+            Spacer(modifier = Modifier.height(8.sdp))
 
-            Row(horizontalArrangement = Arrangement.spacedBy(12.dp)) {
+            Row(horizontalArrangement = Arrangement.spacedBy(8.sdp)) {
                 TiktokDirectLinkCard(
                     title = stringResource(R.string.platform_tiktok),
                     subtitle = stringResource(R.string.downloader_video_and_music),
                     modifier = Modifier
                         .weight(1f)
-                        .height(176.dp),
+                        .height(140.sdp),
                     iconPainter = R.drawable.ic_tiktok,
                     onClick = { onPlatformSelected(DownloadPlatform.TIKTOK) }
                 )
                 Column(
                     modifier = Modifier.weight(1f),
-                    verticalArrangement = Arrangement.spacedBy(12.dp)
+                    verticalArrangement = Arrangement.spacedBy(10.sdp)
                 ) {
                     PlatformDirectLinkRowCard(
                         stringResource(R.string.downloader_fb_saver),
                         modifier = Modifier
                             .fillMaxWidth()
-                            .height(81.dp),
+                            .height(64.sdp),
                         iconPainter = R.drawable.ic_facebook,
                         onClick = { onPlatformSelected(DownloadPlatform.FACEBOOK) })
                     PlatformDirectLinkRowCard(
                         stringResource(R.string.downloader_ig_saver),
                         modifier = Modifier
                             .fillMaxWidth()
-                            .height(81.dp),
+                            .height(64.sdp),
                         iconPainter = R.drawable.ic_intagram,
                         onClick = { onPlatformSelected(DownloadPlatform.INSTAGRAM) })
                 }
             }
 
-            Spacer(modifier = Modifier.height(12.dp))
-            Row(horizontalArrangement = Arrangement.spacedBy(12.dp)) {
+            Spacer(modifier = Modifier.height(10.sdp))
+            Row(horizontalArrangement = Arrangement.spacedBy(8.sdp)) {
                 PlatformDirectLinkRowCard(
                     stringResource(R.string.downloader_linkedin_saver),
                     modifier = Modifier
                         .weight(1f)
-                        .height(81.dp),
+                        .height(64.sdp),
                     iconPainter = R.drawable.ic_linkedin,
                     onClick = { onPlatformSelected(DownloadPlatform.LINKEDIN) })
                 PlatformDirectLinkRowCard(
                     stringResource(R.string.downloader_axe),
                     modifier = Modifier
                         .weight(1f)
-                        .height(81.dp),
+                        .height(64.sdp),
                     iconPainter = R.drawable.ic_axe,
                     onClick = { onPlatformSelected(DownloadPlatform.X) })
             }
@@ -274,7 +275,7 @@ fun DownloaderScreen(
 
 
 
-        Spacer(modifier = Modifier.height(14.dp))
+        Spacer(modifier = Modifier.height(11.sdp))
     }
 
     if (state.showDownloadDialog) {
@@ -323,7 +324,7 @@ private fun TiktokDirectLinkCard(
                 maxLines = 1,
                 overflow = TextOverflow.Ellipsis
             )
-            Spacer(modifier = Modifier.height(2.dp))
+            Spacer(modifier = Modifier.height(2.sdp))
             Text(subtitle, style = MaterialTheme.typography.bodySmall, color = Color(0xFF787F82))
         }
     }
@@ -341,15 +342,15 @@ private fun PlatformDirectLinkRowCard(
         Row(
             modifier = Modifier
                 .fillMaxSize()
-                .padding(horizontal = 16.dp),
+                .padding(horizontal = 10.sdp),
             verticalAlignment = Alignment.CenterVertically,
-            horizontalArrangement = Arrangement.spacedBy(12.dp)
+            horizontalArrangement = Arrangement.spacedBy(10.sdp)
         ) {
 
             Image(
                 painter = painterResource(iconPainter),
                 contentDescription = title,
-                modifier = Modifier.size(36.dp)
+                modifier = Modifier.size(30.sdp)
             )
 
             Text(
@@ -362,4 +363,3 @@ private fun PlatformDirectLinkRowCard(
         }
     }
 }
-

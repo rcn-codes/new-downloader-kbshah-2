@@ -49,6 +49,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.newdownloader26.R
 import network.chaintech.sdpcomposemultiplatform.sdp
+import network.chaintech.sdpcomposemultiplatform.ssp
 
 enum class ProUpgradePlan {
     Weekly,
@@ -90,12 +91,6 @@ fun ProUpgradeScreen(
         )
     }
 
-    BoxWithConstraints(modifier = modifier.fillMaxSize()) {
-        val isNarrow = maxWidth < 380.dp
-        val horizontalPadding = if (isNarrow) 12.dp else 16.dp
-        val heroSpacer = (maxHeight * 0.32f).coerceIn(170.dp, 240.dp)
-
-
         Box(
             modifier = Modifier
                 .fillMaxSize()
@@ -119,10 +114,10 @@ fun ProUpgradeScreen(
                 onClick = onBack,
                 modifier = Modifier
                     .fillMaxWidth()
-                    .padding(start = horizontalPadding, end = horizontalPadding)
+                    .padding(start = 7.sdp , end = 8.sdp )
             )
 
-            Spacer(modifier = Modifier.height(heroSpacer))
+            Spacer(modifier = Modifier.height(185.sdp))
 
             Column(
                 modifier = Modifier
@@ -130,41 +125,40 @@ fun ProUpgradeScreen(
                     .verticalScroll(rememberScrollState())
             ) {
                 UpgradeTitle()
-                Spacer(modifier = Modifier.height(16.dp))
-                FeaturesCard(modifier = Modifier.padding(horizontal = horizontalPadding))
-                Spacer(modifier = Modifier.height(18.dp))
+                Spacer(modifier = Modifier.height(14.sdp))
+                FeaturesCard(modifier = Modifier.padding(horizontal = 12.sdp ))
+                Spacer(modifier = Modifier.height(15.sdp))
 
                 PlanSelector(
                     plans = plans,
                     selectedPlan = selectedPlan,
-                    isNarrow = isNarrow,
                     modifier = Modifier
                         .fillMaxWidth()
-                        .padding(horizontal = horizontalPadding),
+                        .padding(horizontal = 10.sdp ),
                     onSelect = { selectedPlan = it }
                 )
 
-                Spacer(modifier = Modifier.height(25.dp))
+                Spacer(modifier = Modifier.height(22.sdp))
 
                 BuyNowButton(
                     onClick = { onBuyNow(selectedPlan) },
                     modifier = Modifier
                         .fillMaxWidth()
-                        .padding(horizontal = horizontalPadding)
+                        .padding(horizontal = 12.sdp )
                 )
 
-                Spacer(modifier = Modifier.height(20.sdp))
+                Spacer(modifier = Modifier.height(15.sdp))
 
                 Text(
                     text = stringResource(R.string.pro_legal_disclaimer),
-                    modifier = Modifier.padding(horizontal = (horizontalPadding + 4.dp)),
+                    modifier = Modifier.padding(horizontal = (12.sdp  + 4.sdp)),
                     color = Color(0xFF323233),
-                    fontSize = 11.sp,
-                    lineHeight = 16.sp,
+                    fontSize = 9.ssp,
+                    lineHeight = 10.ssp,
                     textAlign = TextAlign.Center
                 )
 
-                Spacer(modifier = Modifier.height(12.dp))
+                Spacer(modifier = Modifier.height(10.sdp))
 
                 FooterLinks(
                     onOpenTerms = onOpenTerms,
@@ -172,14 +166,14 @@ fun ProUpgradeScreen(
                     onRestorePurchase = onRestorePurchase,
                     modifier = Modifier
                         .fillMaxWidth()
-                        .padding(horizontal = horizontalPadding)
-                        .padding(bottom = 24.dp)
+                        .padding(horizontal = 12.sdp )
+                        .padding(bottom = 24.sdp)
                 )
             }
         }
     }
 
-        }
+
 
 }
 
@@ -201,8 +195,8 @@ private fun CloseButton(
         Box(
             modifier = Modifier
                 .align(Alignment.TopEnd)
-                .size(44.dp)
-                .clip(RoundedCornerShape(12.dp))
+                .size(34.sdp)
+                .clip(RoundedCornerShape(12.sdp))
                 .background(Color(0x44000000))
                 .clickable(
                     interactionSource = closeInteraction,
@@ -215,7 +209,7 @@ private fun CloseButton(
                 imageVector = Icons.Default.Close,
                 contentDescription = stringResource(R.string.common_close),
                 tint = Color.White,
-                modifier = Modifier.size(22.dp)
+                modifier = Modifier.size(18.sdp)
             )
         }
     }
@@ -236,12 +230,12 @@ private fun UpgradeTitle() {
             style = MaterialTheme.typography.headlineLarge,
 
         )
-        Spacer(modifier = Modifier.width(8.dp))
+        Spacer(modifier = Modifier.width(5.sdp))
         Box(
             modifier = Modifier
-                .clip(RoundedCornerShape(8.dp))
+                .clip(RoundedCornerShape(8.sdp))
                 .background(Color(0xFF1A1A1A))
-                .padding(horizontal = 12.dp, vertical = 4.dp)
+                .padding(horizontal = 8.sdp, vertical = 2.sdp)
         ) {
             Text(
                 text = stringResource(R.string.pro_upgrade_badge),
@@ -257,33 +251,33 @@ private fun UpgradeTitle() {
 private fun FeaturesCard(modifier: Modifier = Modifier) {
     Surface(
         modifier = modifier,
-        shape = RoundedCornerShape(22.dp),
+        shape = RoundedCornerShape(18.sdp),
         color = Color.White,
-        shadowElevation = 4.dp
+        shadowElevation = 4.sdp
     ) {
         Column(
             modifier = Modifier
-                .padding(vertical = 7.sdp)
+                .padding(vertical = 5.sdp)
                 .fillMaxWidth()
-                .padding(vertical = 14.dp, horizontal = 14.dp),
-            verticalArrangement = Arrangement.spacedBy(14.dp)
+                .padding(vertical = 10.sdp, horizontal = 10.sdp),
+            verticalArrangement = Arrangement.spacedBy(12.sdp)
         ) {
             FeatureRow(
                 icon = R.drawable.ic_unlimited_download,
-                iconWidth = 22.dp,
-                iconHeight = 20.dp,
+                iconWidth = 20.sdp,
+                iconHeight = 18.sdp,
                 label = stringResource(R.string.pro_feature_unlimited)
             )
             FeatureRow(
                 icon = R.drawable.ic_2x_faster,
-                iconWidth = 18.dp,
-                iconHeight = 18.dp,
+                iconWidth = 17.sdp,
+                iconHeight = 17.sdp,
                 label = stringResource(R.string.pro_feature_faster)
             )
             FeatureRow(
                 icon = R.drawable.ic_ad_free,
-                iconWidth = 20.dp,
-                iconHeight = 20.dp,
+                iconWidth = 18.sdp,
+                iconHeight = 18.sdp,
                 label = stringResource(R.string.pro_feature_ad_free)
             )
         }
@@ -300,7 +294,7 @@ private fun FeatureRow(
     Row(
         modifier = Modifier.fillMaxWidth(),
         verticalAlignment = Alignment.CenterVertically,
-        horizontalArrangement = Arrangement.spacedBy(15.sdp)
+        horizontalArrangement = Arrangement.spacedBy(10.sdp)
     ) {
         Icon(
             painter = painterResource(icon),
@@ -318,7 +312,7 @@ private fun FeatureRow(
         Icon(
             painter = painterResource(R.drawable.ic_crown_offer),
             contentDescription = null,
-            modifier = Modifier.size(22.dp),
+            modifier = Modifier.size(18.sdp),
             tint = Color.Unspecified
         )
     }
@@ -340,22 +334,22 @@ private fun PlanOption(
     Box(modifier = modifier) {
         Surface(
             onClick = onClick,
-            shape = RoundedCornerShape(18.dp),
+            shape = RoundedCornerShape(16.sdp),
             color = bg,
-            shadowElevation = if (selected) 8.dp else 4.dp,
+            shadowElevation = if (selected) 1.sdp else 1.sdp,
             modifier = Modifier.fillMaxWidth()
         ) {
             Column(
                 modifier = Modifier
                     .fillMaxWidth()
-                    .padding(vertical = 14.dp, horizontal = 6.dp),
+                    .padding(vertical = 12.sdp, horizontal = 9.sdp),
                 horizontalAlignment = Alignment.CenterHorizontally,
-                verticalArrangement = Arrangement.spacedBy(8.dp)
+                verticalArrangement = Arrangement.spacedBy(7.sdp)
             ) {
                 Icon(
                     painter = painterResource(R.drawable.ic_crown_price),
                     contentDescription = null,
-                    modifier = Modifier.size(30.dp),
+                    modifier = Modifier.size(24.sdp),
                     tint = crownTint
                 )
                 Text(
@@ -370,7 +364,7 @@ private fun PlanOption(
                     color = fg,
                     style = MaterialTheme.typography.titleSmall,
                     textAlign = TextAlign.Center,
-                    lineHeight = 14.sp
+
                 )
             }
         }
@@ -378,15 +372,15 @@ private fun PlanOption(
             Box(
                 modifier = Modifier
                     .align(Alignment.TopEnd)
-                    .offset(x = 6.dp, y = (-6).dp)
+                    .offset(x = 6.sdp, y = (-6).sdp)
                     .clip(RoundedCornerShape(50))
                     .background(Color(0xFFFF6B9D))
-                    .padding(horizontal = 8.dp, vertical = 3.dp)
+                    .padding(horizontal = 8.sdp, vertical = 3.sdp)
             ) {
                 Text(
                     text = stringResource(R.string.pro_off_badge),
                     color = Color.White,
-                    fontSize = 9.sp,
+                    fontSize = 9.ssp,
                     fontWeight = FontWeight.Bold
                 )
             }
@@ -398,30 +392,14 @@ private fun PlanOption(
 private fun PlanSelector(
     plans: List<ProPlanUi>,
     selectedPlan: ProUpgradePlan,
-    isNarrow: Boolean,
+
     onSelect: (ProUpgradePlan) -> Unit,
     modifier: Modifier = Modifier,
 ) {
-    if (isNarrow) {
-        Column(
-            modifier = modifier,
-            verticalArrangement = Arrangement.spacedBy(10.dp)
-        ) {
-            plans.forEach { p ->
-                PlanOption(
-                    title = stringResource(p.titleRes),
-                    price = stringResource(p.priceRes),
-                    selected = selectedPlan == p.plan,
-                    showOffBadge = p.showOffBadge,
-                    onClick = { onSelect(p.plan) },
-                    modifier = Modifier.fillMaxWidth()
-                )
-            }
-        }
-    } else {
+
         Row(
             modifier = modifier,
-            horizontalArrangement = Arrangement.spacedBy(8.dp)
+            horizontalArrangement = Arrangement.spacedBy(7.sdp)
         ) {
             plans.forEach { p ->
                 PlanOption(
@@ -434,7 +412,6 @@ private fun PlanSelector(
                 )
             }
         }
-    }
 }
 
 @Composable
@@ -444,8 +421,8 @@ private fun BuyNowButton(
 ) {
     Box(
         modifier = modifier
-            .height(52.dp)
-            .clip(RoundedCornerShape(10.sdp))
+            .height(43.sdp)
+            .clip(RoundedCornerShape(14.sdp))
             .background(
                 Brush.horizontalGradient(
                     colors = listOf(
@@ -460,7 +437,6 @@ private fun BuyNowButton(
         Text(
             text = stringResource(R.string.pro_buy_now),
             color = Color.White,
-            fontWeight = FontWeight.Bold,
             style = MaterialTheme.typography.titleLarge
         )
     }
@@ -475,7 +451,7 @@ private fun FooterLinks(
 ) {
     val linkStyle = MaterialTheme.typography.bodySmall.copy(
         color = Color(0xFF323233),
-        fontSize = 11.sp
+        fontSize = 10.ssp
     )
     Row(
         modifier = modifier,
@@ -520,6 +496,6 @@ private fun FooterSeparator(
     Text(
         text = stringResource(R.string.pro_footer_separator),
         style = style,
-        modifier = modifier.padding(horizontal = 6.dp)
+        modifier = modifier.padding(horizontal = 5.sdp)
     )
 }
